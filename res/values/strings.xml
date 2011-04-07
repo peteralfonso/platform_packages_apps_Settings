@@ -2678,6 +2678,10 @@ found in the list of installed applications.</string>
     <string name="sound_category_notification_title">Notifications</string>
     <string name="sound_category_feedback_title">Feedback</string>
 
+    <!-- Sound & display settings screen, setting option name to change trackball wake -->
+    <string name="screen_trackball_wake">Trackball Wake</string>
+    <string name="screen_trackball_wake_summary">Wake the screen when the trackball is pressed</string>
+
     <!-- Widget picker -->
     <string name="widget_count">(%d widgets)</string>
 

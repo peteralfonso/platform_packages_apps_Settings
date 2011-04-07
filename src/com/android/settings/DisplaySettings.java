@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -45,9 +46,11 @@ public class DisplaySettings extends PreferenceActivity implements
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_ANIMATIONS = "animations";
     private static final String KEY_ACCELEROMETER = "accelerometer";
+    private static final String KEY_TRACKBALL_WAKE = "trackball_wake";
 
     private ListPreference mAnimations;
     private CheckBoxPreference mAccelerometer;
+    private CheckBoxPreference mTrackballWake;
     private float[] mAnimationScales;
 
     private IWindowManager mWindowManager;
@@ -71,6 +74,15 @@ public class DisplaySettings extends PreferenceActivity implements
                 resolver, SCREEN_OFF_TIMEOUT, FALLBACK_SCREEN_TIMEOUT_VALUE)));
         screenTimeoutPreference.setOnPreferenceChangeListener(this);
         disableUnusableTimeouts(screenTimeoutPreference);
+
+        mTrackballWake = (CheckBoxPreference) findPreference(KEY_TRACKBALL_WAKE);
+
+        // only show the trackball wake option if this device has a trackball
+        if (getResources().getConfiguration().navigation == Configuration.NAVIGATION_TRACKBALL) {
+            mTrackballWake.setPersistent(false);
+        } else {
+            getPreferenceScreen().removePreference(mTrackballWake);
+        }
     }
 
     private void disableUnusableTimeouts(ListPreference screenTimeoutPreference) {
@@ -144,6 +156,10 @@ public class DisplaySettings extends PreferenceActivity implements
         mAccelerometer.setChecked(Settings.System.getInt(
                 getContentResolver(),
                 Settings.System.ACCELEROMETER_ROTATION, 0) != 0);
+
+        mTrackballWake.setChecked(Settings.System.getInt(
+                getContentResolver(),
+                Settings.System.TRACKBALL_WAKE_SCREEN, 0) != 0);
     }
 
     private void updateAnimationsSummary(Object value) {
@@ -165,6 +181,10 @@ public class DisplaySettings extends PreferenceActivity implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.ACCELEROMETER_ROTATION,
                     mAccelerometer.isChecked() ? 1 : 0);
+        } else if (preference == mTrackballWake) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.TRACKBALL_WAKE_SCREEN,
+                    mTrackballWake.isChecked() ? 1 : 0);
         }
         return true;
     }

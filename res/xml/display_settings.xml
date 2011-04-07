@@ -41,4 +41,9 @@
                 android:persistent="false"
                 android:entries="@array/screen_timeout_entries"
                 android:entryValues="@array/screen_timeout_values" />
+
+        <CheckBoxPreference
+            android:key="trackball_wake"
+            android:title="@string/screen_trackball_wake"
+            android:summary="@string/screen_trackball_wake_summary" />
 </PreferenceScreen>
