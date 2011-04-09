@@ -1519,7 +1519,7 @@
     <string name="network_settings_summary">Set options for roaming, networks, APNs</string>
 
     <!-- Security & location settings screen, section header for settings relating to location -->
-    <string name="location_title">My Location</string>
+    <string name="location_title">My location</string>
     <!-- Security & location settings screen, setting check box label if the user wants to use wireless network-based positioning (cell ID, wifi, etc.) -->
     <string name="location_network_based">Use wireless networks</string>
     <!-- Security & location settings screen, setting summary when Use wireless networks check box is clear -->
