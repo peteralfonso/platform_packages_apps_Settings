@@ -21,6 +21,16 @@
     android:key="parent">
 
         <com.android.settings.IconPreferenceScreen
+            android:title="@string/toolkit_title"
+            settings:icon="@drawable/ic_settings_toolkit"
+            android:key="toolkit_settings">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.pete.toolkit"
+                android:targetClass="com.pete.toolkit.activities.CPUActivity" />
+        </com.android.settings.IconPreferenceScreen>
+
+        <com.android.settings.IconPreferenceScreen
             android:title="@string/radio_controls_title"
             settings:icon="@drawable/ic_settings_wireless">
             <intent
