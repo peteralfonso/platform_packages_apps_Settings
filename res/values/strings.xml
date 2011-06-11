@@ -488,7 +488,7 @@
     <!-- Main Settings screen settings summary text for the "Wireless controls" setting -->
     <string name="radio_controls_summary">Manage Wi-Fi, Bluetooth, airplane mode, mobile networks, &amp; VPNs</string>
 
-    <string name="toolkit_title">Toolkit</string>
+    <string name="toolkit_title">CPU settings</string>
 
 
     <!-- mobile network settings screen, setting check box title -->

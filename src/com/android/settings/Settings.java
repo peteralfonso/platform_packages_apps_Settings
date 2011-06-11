@@ -48,7 +48,7 @@ public class Settings extends PreferenceActivity {
 
         PreferenceGroup parent = (PreferenceGroup) findPreference(KEY_PARENT);
         Utils.updatePreferenceToSpecificActivityOrRemove(this, parent, KEY_SYNC_SETTINGS, 0);
-	Utils.updatePreferenceToSpecificActivityOrRemove(this, parent, KEY_TOOLKIT, 0);
+        Utils.updatePreferenceToSpecificActivityOrRemove(this, parent, KEY_TOOLKIT, 0);
         mToolkitSettings = parent.findPreference(KEY_TOOLKIT);
 
         Preference dockSettings = parent.findPreference(KEY_DOCK_SETTINGS);
