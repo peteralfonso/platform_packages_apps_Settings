@@ -64,6 +64,7 @@ public class SecuritySettings extends PreferenceActivity {
 
     private static final String KEY_LOCK_ENABLED = "lockenabled";
     private static final String KEY_VISIBLE_PATTERN = "visiblepattern";
+    private static final String KEY_FAILED_PATTERN = "failedpattern";
     private static final String KEY_TACTILE_FEEDBACK_ENABLED = "unlock_tactile_feedback";
 
     // Encrypted File Systems constants
@@ -71,6 +72,7 @@ public class SecuritySettings extends PreferenceActivity {
     private static final String PROPERTY_EFS_TRANSITION = "persist.security.efs.trans";
 
     private CheckBoxPreference mVisiblePattern;
+    private CheckBoxPreference mFailedPattern;
     private CheckBoxPreference mTactileFeedback;
 
     private CheckBoxPreference mShowPassword;
@@ -166,6 +168,9 @@ public class SecuritySettings extends PreferenceActivity {
         // visible pattern
         mVisiblePattern = (CheckBoxPreference) pm.findPreference(KEY_VISIBLE_PATTERN);
 
+        // failed pattern
+        mFailedPattern = (CheckBoxPreference) pm.findPreference(KEY_FAILED_PATTERN);
+
         // tactile feedback. Should be common to all unlock preference screens.
         mTactileFeedback = (CheckBoxPreference) pm.findPreference(KEY_TACTILE_FEEDBACK_ENABLED);
 
@@ -232,6 +237,9 @@ public class SecuritySettings extends PreferenceActivity {
         if (mVisiblePattern != null) {
             mVisiblePattern.setChecked(lockPatternUtils.isVisiblePatternEnabled());
         }
+        if (mFailedPattern != null) {
+            mFailedPattern.setChecked(lockPatternUtils.isFailedPatternEnabled());
+        }
         if (mTactileFeedback != null) {
             mTactileFeedback.setChecked(lockPatternUtils.isTactileFeedbackEnabled());
         }
@@ -255,6 +263,8 @@ public class SecuritySettings extends PreferenceActivity {
             lockPatternUtils.setLockPatternEnabled(isToggled(preference));
         } else if (KEY_VISIBLE_PATTERN.equals(key)) {
             lockPatternUtils.setVisiblePatternEnabled(isToggled(preference));
+        } else if (KEY_FAILED_PATTERN.equals(key)) {
+            lockPatternUtils.setFailedPatternEnabled(isToggled(preference));
         } else if (KEY_TACTILE_FEEDBACK_ENABLED.equals(key)) {
             lockPatternUtils.setTactileFeedbackEnabled(isToggled(preference));
         } else if (preference == mShowPassword) {
