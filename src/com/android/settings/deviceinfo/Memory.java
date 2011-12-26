@@ -238,40 +238,68 @@ public class Memory extends SettingsPreferenceFragment {
 
     @Override
     public Dialog onCreateDialog(int id) {
-        switch (id) {
-        case DLG_CONFIRM_UNMOUNT:
-                return new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.dlg_confirm_unmount_title)
-                    .setPositiveButton(R.string.dlg_ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            doUnmount();
-                        }})
-                    .setNegativeButton(R.string.cancel, null)
-                    .setMessage(R.string.dlg_confirm_unmount_text)
-                    .create();
-        case DLG_ERROR_UNMOUNT:
-                return new AlertDialog.Builder(getActivity())
-            .setTitle(R.string.dlg_error_unmount_title)
-            .setNeutralButton(R.string.dlg_ok, null)
-            .setMessage(R.string.dlg_error_unmount_text)
-            .create();
-        }
+		// USB    
+        if(mClickedMountPoint.equals(mResources.getString(R.string.usb_mount_location))) {
+			switch (id) {
+			case DLG_CONFIRM_UNMOUNT:
+					return new AlertDialog.Builder(getActivity())
+						.setTitle(R.string.usb_confirm_unmount_title)
+						.setPositiveButton(R.string.dlg_ok, new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+								doUnmount();
+							}})
+						.setNegativeButton(R.string.cancel, null)
+						.setMessage(R.string.usb_confirm_unmount_text)
+						.create();
+			case DLG_ERROR_UNMOUNT:
+					return new AlertDialog.Builder(getActivity())
+				.setTitle(R.string.dlg_error_unmount_title)
+				.setNeutralButton(R.string.dlg_ok, null)
+				.setMessage(R.string.usb_error_unmount_text)
+				.create();
+			}
+		}
+		else {
+			switch (id) {
+			case DLG_CONFIRM_UNMOUNT:
+					return new AlertDialog.Builder(getActivity())
+						.setTitle(R.string.dlg_confirm_unmount_title)
+						.setPositiveButton(R.string.dlg_ok, new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+								doUnmount();
+							}})
+						.setNegativeButton(R.string.cancel, null)
+						.setMessage(R.string.dlg_confirm_unmount_text)
+						.create();
+			case DLG_ERROR_UNMOUNT:
+					return new AlertDialog.Builder(getActivity())
+				.setTitle(R.string.dlg_error_unmount_title)
+				.setNeutralButton(R.string.dlg_ok, null)
+				.setMessage(R.string.dlg_error_unmount_text)
+				.create();
+			}
+		}
         return null;
     }
 
     private void doUnmount() {
-        // Present a toast here
-        Toast.makeText(getActivity(), R.string.unmount_inform_text, Toast.LENGTH_SHORT).show();
-        IMountService mountService = getMountService();
-        try {
-            mLastClickedMountToggle.setEnabled(false);
-            mLastClickedMountToggle.setTitle(mResources.getString(R.string.sd_ejecting_title));
-            mLastClickedMountToggle.setSummary(mResources.getString(R.string.sd_ejecting_summary));
-            mountService.unmountVolume(mClickedMountPoint, true, false);
-        } catch (RemoteException e) {
-            // Informative dialog to user that unmount failed.
-            showDialogInner(DLG_ERROR_UNMOUNT);
-        }
+        // USB
+        if(mClickedMountPoint.equals(mResources.getString(R.string.usb_mount_location)))
+			Toast.makeText(getActivity(), R.string.usb_unmount_inform_text, Toast.LENGTH_SHORT).show();
+		else
+			Toast.makeText(getActivity(), R.string.unmount_inform_text, Toast.LENGTH_SHORT).show();
+			
+		IMountService mountService = getMountService();
+
+		try {
+			mLastClickedMountToggle.setEnabled(false);
+			mLastClickedMountToggle.setTitle(mResources.getString(R.string.sd_ejecting_title));
+			mLastClickedMountToggle.setSummary(mResources.getString(R.string.sd_ejecting_summary));
+			mountService.unmountVolume(mClickedMountPoint, true, false);
+		} catch (RemoteException e) {
+			// Informative dialog to user that unmount failed.
+			showDialogInner(DLG_ERROR_UNMOUNT);
+		}
     }
 
     private void showDialogInner(int id) {

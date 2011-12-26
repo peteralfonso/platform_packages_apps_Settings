@@ -3824,4 +3824,17 @@ found in the list of installed apps.</string>
     <string name="cpu_set_on_boot">Set on boot</string>
     <string name="cpu_set_on_boot_summary">Restore the processor settings on boot</string>
 
+    <!-- USB Mount -->
+    <string name="usb_eject">Unmount USB Storage</string>
+    <string name="usb_eject_summary">Unmount the USB storage so you can safely remove it</string>
+    <string name="usb_mount">Mount USB storage</string>
+    <string name="usb_insert_summary">Insert USB storage for mounting</string>
+    <string name="usb_format">Erase USB Storage</string>
+    <string name="usb_format_summary">Erases all data on the external USB storage, such as music and photos</string>
+    <string name="usb_confirm_unmount_title">Unmount USB storage?</string>
+    <string name="usb_confirm_unmount_text">If you unmount the USB storage, some apps you are using will stop and may be unavailable until you remount the USB storage.</string>
+    <string name="usb_error_unmount_text">Couldn\'t unmount USB storage. Try again later.</string>
+    <string name="usb_unmount_inform_text">USB storage will be unmounted.</string>
+    <string name="usb_mount_location">/mnt/usb</string>  
+
 </resources>
