@@ -111,4 +111,10 @@
                 android:title="@string/build_number"
                 android:summary="@string/device_info_default"/>
 
+        <!-- Detailed build date -->
+        <Preference android:key="build_date" 
+                style="?android:preferenceInformationStyle"
+                android:title="@string/build_date"
+                android:summary="@string/device_info_default"/>
+
 </PreferenceScreen>
