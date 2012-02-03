@@ -44,6 +44,12 @@
                 android:entries="@array/screen_timeout_entries"
                 android:entryValues="@array/screen_timeout_values" />
 
+        <CheckBoxPreference
+            android:key="combined_bar_auto_hide"
+            android:title="@string/statusbar_auto_hide_title"
+            android:summary="@string/statusbar_auto_hide_summary"
+            android:defaultValue="true" />
+
         <ListPreference
                 android:key="font_size"
                 android:title="@string/title_font_size"

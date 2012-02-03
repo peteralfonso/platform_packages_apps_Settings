@@ -1514,8 +1514,6 @@
     <string name="vibrate_on_ring_title">Vibrate and ring</string>
     <!-- Sound settings screen, setting option name -->
     <string name="notification_sound_title">Default notification</string>
-    <!-- Sound settings screen, notification light repeat pulsing title -->
-    <string name="notification_pulse_title">Pulse notification light</string>
     <!-- Sound settings screen, the title of the volume bar to adjust the incoming call volume -->
     <string name="incoming_call_volume_title">Ringtone</string>
     <!-- Sound settings screen, the title of the volume bar to adjust the notification volume -->
@@ -1594,27 +1592,27 @@
     <string name="search_settings_summary">Manage search settings and history</string>
 
     <!-- Display settings --><skip/>
-    <!-- Sound & display settings screen, section header for settings related to display -->
+    <!-- Display settings screen, section header for settings related to display -->
     <string name="display_settings">Display</string>
-    <!-- Sound & display settings screen, accelerometer-based rotation check box label -->
+    <!-- Display settings screen, accelerometer-based rotation check box label -->
     <string name="accelerometer_title">Auto-rotate screen</string>
-    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is selected -->
+    <!-- Display settings screen, accelerometer-based rotation summary text when check box is selected -->
     <string name="accelerometer_summary_on" product="tablet">Switch orientation automatically when rotating tablet</string>
-    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is selected -->
+    <!-- Display settings screen, accelerometer-based rotation summary text when check box is selected -->
     <string name="accelerometer_summary_on" product="default">Switch orientation automatically when rotating phone</string>
-    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is clear -->
+    <!-- Display settings screen, accelerometer-based rotation summary text when check box is clear -->
     <string name="accelerometer_summary_off" product="tablet">Switch orientation automatically when rotating tablet</string>
-    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is clear -->
+    <!-- Display settings screen, accelerometer-based rotation summary text when check box is clear -->
     <string name="accelerometer_summary_off" product="default">Switch orientation automatically when rotating phone</string>
-    <!-- Sound & display settings screen, setting option name to change brightness -->
+    <!-- Display settings screen, setting option name to change brightness -->
     <string name="brightness">Brightness</string>
-    <!-- Sound & display settings screen, setting option summary to change brightness -->
+    <!-- Display settings screen, setting option summary to change brightness -->
     <string name="brightness_summary">Adjust the brightness of the screen</string>
-    <!-- Sound & display settings screen, auto-dim backlight check box label -->
+    <!-- Display settings screen, auto-dim backlight check box label -->
     <string name="brightness_auto_dim_title">Auto-dim backlight</string>
-    <!-- Sound & display settings screen, setting option name to change screen timeout -->
+    <!-- Display settings screen, setting option name to change screen timeout -->
     <string name="screen_timeout">Sleep</string>
-    <!-- Sound & display settings screen, setting option summary to change screen timeout -->
+    <!-- Display settings screen, setting option summary to change screen timeout -->
     <string name="screen_timeout_summary">After <xliff:g id="timeout_description">%1$s</xliff:g> of inactivity</string>
     <!-- Wallpaper settings title [CHAR LIMIT=30] -->
     <string name="wallpaper_settings_title">Wallpaper</string>
@@ -1639,14 +1637,21 @@
     <!-- Screen saver settings, checkbox allowing the screen saver to activate automatically when
          the device is docked -->
     <string name="screensaver_activate_on_dock_title">Also start when docked</string>
-    <!-- Sound & display settings screen, setting option name to change whether the screen adjusts automatically based on lighting conditions -->
+    <!-- Display settings screen, setting option name to change whether the screen adjusts automatically based on lighting conditions -->
     <string name="automatic_brightness">Automatic brightness</string>
-    <!-- [CHAR LIMIT=30] Sound & display settings screen, setting option name to change font size -->
+    <!-- [CHAR LIMIT=30] Display settings screen, setting option name to change font size -->
     <string name="title_font_size">Font size</string>
-    <!-- Sound & display settings screen, setting option summary displaying the currently selected font size -->
+    <!-- Display settings screen, setting option summary displaying the currently selected font size -->
     <string name="summary_font_size" translatable="false">%1$s</string>
-    <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking font size -->
+    <!-- [CHAR LIMIT=40] Display settings screen, title of dialog for picking font size -->
     <string name="dialog_title_font_size">Font size</string>
+    <!-- Display settings screen, auto-hide statusbar check box label -->
+    <string name="statusbar_auto_hide_title">Auto-hide status bar</string>
+    <!-- Display settings screen, auto-hide statusbar check box summary -->
+    <string name="statusbar_auto_hide_summary">Allow status bar to hide while using a full-screen app</string>
+    <!-- Display settings screen, notification light repeat pulsing title -->
+    <string name="notification_pulse_title">Pulse notification light</string>
+
 
     <!-- SIM lock settings title -->
     <string name="sim_lock_settings">SIM card lock settings</string>

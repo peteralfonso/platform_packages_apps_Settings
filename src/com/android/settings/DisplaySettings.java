@@ -56,6 +56,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mBrightnessAutoDim;
     private CheckBoxPreference mAccelerometer;
     private ListPreference mFontSizePref;
+    private CheckBoxPreference mAutoHideStatusBar;
     private CheckBoxPreference mNotificationPulse;
 
     private final Configuration mCurConfig = new Configuration();
@@ -80,6 +81,19 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mBrightnessAutoDim.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.SCREEN_BRIGHTNESS_AUTO_DIM, 0) == 1);
         mBrightnessAutoDim.setOnPreferenceChangeListener(this);
+
+        mAutoHideStatusBar = (CheckBoxPreference) findPreference("combined_bar_auto_hide");
+        final int screenSize = getResources().getConfiguration().screenLayout &
+                Configuration.SCREENLAYOUT_SIZE_MASK;
+        boolean isScreenLarge = screenSize == Configuration.SCREENLAYOUT_SIZE_LARGE ||
+            screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE;
+        if (!isScreenLarge) {
+            getPreferenceScreen().removePreference(mAutoHideStatusBar);
+        } else {
+        mAutoHideStatusBar.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.COMBINED_BAR_AUTO_HIDE, 0) == 1);
+        mAutoHideStatusBar.setOnPreferenceChangeListener(this);
+        }
 
         mAccelerometer = (CheckBoxPreference) findPreference(KEY_ACCELEROMETER);
         mAccelerometer.setPersistent(false);
@@ -258,6 +272,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else if (preference == mBrightnessAutoDim) {
             boolean value = mBrightnessAutoDim.isChecked();
             Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_AUTO_DIM,
+                    value ? 1 : 0);
+            return true;
+        } else if (preference == mAutoHideStatusBar) {
+            boolean value = mAutoHideStatusBar.isChecked();
+            Settings.System.putInt(getContentResolver(), Settings.System.COMBINED_BAR_AUTO_HIDE,
                     value ? 1 : 0);
             return true;
         }
