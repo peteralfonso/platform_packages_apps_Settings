@@ -23,6 +23,10 @@
                 android:title="@string/brightness"
                 android:dialogTitle="@string/brightness" />
 
+        <CheckBoxPreference
+            android:key="brightness_auto_dim"
+            android:title="@string/brightness_auto_dim_title"/>
+
         <PreferenceScreen
                 android:key="wallpaper"
                 android:title="@string/wallpaper_settings_title"
