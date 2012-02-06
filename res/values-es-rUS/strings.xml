@@ -633,7 +633,7 @@
     <string name="sync_settings" msgid="9186125469300013491">"Cuentas y sincronización"</string>
     <string name="search_settings" msgid="1910951467596035063">"Buscar"</string>
     <string name="search_settings_summary" msgid="9205656546570654169">"Administrar la configuración y el historial de búsqueda"</string>
-    <string name="display_settings" msgid="7965901687241669598">"Mostrar"</string>
+    <string name="display_settings" msgid="7965901687241669598">"Mostrar y interfaz"</string>
     <string name="accelerometer_title" msgid="7854608399547349157">"Rotar automáticamente la pantalla"</string>
     <string name="accelerometer_summary_on" product="tablet" msgid="429982132339828942">"Cambiar la orientación automáticamente al girar el tablet"</string>
     <string name="accelerometer_summary_on" product="default" msgid="1133737282813048021">"Cambiar la orientación automáticamente al girar el teléfono"</string>
@@ -641,6 +641,7 @@
     <string name="accelerometer_summary_off" product="default" msgid="5485489363715740761">"Cambiar la orientación automáticamente al girar el teléfono"</string>
     <string name="brightness" msgid="2354961343555249270">"Brillo"</string>
     <string name="brightness_summary" msgid="838917350127550703">"Ajustar el brillo de la pantalla"</string>
+    <string name="brightness_auto_dim_title">"El oscurecimiento automático de luz de fondo"</string>
     <string name="screen_timeout" msgid="4351334843529712571">"Suspender"</string>
     <string name="screen_timeout_summary" msgid="327761329263064327">"Después de <xliff:g id="TIMEOUT_DESCRIPTION">%1$s</xliff:g> de inactividad"</string>
     <string name="wallpaper_settings_title" msgid="5449180116365824625">"Fondo de pantalla"</string>
@@ -657,6 +658,9 @@
     <string name="automatic_brightness" msgid="5014143533884135461">"Brillo automático"</string>
     <string name="title_font_size" msgid="4405544325522105222">"Tamaño de fuente"</string>
     <string name="dialog_title_font_size" msgid="2231507851258955038">"Tamaño de fuente"</string>
+    <string name="statusbar_auto_hide_title">"Ocultar automáticamente la barra de estado"</string>
+    <string name="statusbar_auto_hide_summary">"Deje que la barra de estado para ocultar durante el uso de una aplicación a pantalla completa"</string>
+    <string name="interface_category">"Interfaz"</string>
     <string name="sim_lock_settings" msgid="3392331196873564292">"Configuración de bloqueo de la tarjeta SIM"</string>
     <string name="sim_lock_settings_category" msgid="5136244267576697004">"Conf. bloqueo de tarj. SIM"</string>
     <string name="sim_lock_settings_title" msgid="9018585580955414596">"Bloqueo de la tarjeta SIM"</string>
