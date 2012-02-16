@@ -707,4 +707,42 @@
         <!-- Status message when VPN is failed. -->
         <item>Unsuccessful</item>
     </string-array>
+
+
+    <!-- Additional toggles can be set in device overlays -->
+    <!-- The toggles set here by default are common -->
+    <string-array name="available_toggles_entries">
+		<item>ROTATE</item>
+		<item>BT</item>
+		<item>GPS</item>
+		<item>WIFI</item>
+		<item>AIRPLANE_MODE</item>
+		<item>SILENT</item>
+		<item>TORCH</item>
+		<item>SYNC</item>
+	</string-array>
+
+    <string-array name="available_toggles_values">
+		<item>Auto-rotate</item>
+		<item>Bluetooth</item>
+		<item>GPS</item>
+		<item>Wi-Fi</item>
+		<item>Airplane mode</item>
+		<item>Silent</item>
+		<item>Torch</item>
+		<item>Sync</item>
+	</string-array>
+
+    <string-array name="brightness_location_entries">
+		<item>Above</item>
+		<item>Below</item>
+		<item>Hidden</item>
+	</string-array>
+
+    <string-array name="brightness_location_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
 </resources>

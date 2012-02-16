@@ -66,4 +66,10 @@
                 android:entryValues="@array/entryvalues_font_size"
                 android:dialogTitle="@string/dialog_title_font_size" />
 
+        <!-- Toggle Settings -->
+        <PreferenceScreen
+                android:id="@+id/statusbar_toggles"
+                android:fragment="com.android.settings.bb.fragments.StatusBarToggles"
+                android:title="@string/toggles_layout" />
+
 </PreferenceScreen>

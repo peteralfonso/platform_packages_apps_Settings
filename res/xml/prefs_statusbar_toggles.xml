@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<Preference
+		android:key="enable_toggles"
+		android:title="@string/enabled_toggles_title"
+		android:summary="@string/enabled_toggles_summary" />
+
+	<Preference
+		android:key="toggles"
+		android:title="@string/toggles_order_title"
+		android:summary="@string/toggles_order_summary">
+	</Preference>
+
+	<ListPreference
+		android:entries="@array/brightness_location_entries"
+		android:entryValues="@array/brightness_location_values"
+		android:key="brightness_location"
+		android:title="@string/brightness_location_title" />
+
+	<CheckBoxPreference
+		android:key="auto_hide_toggles"
+		android:title="@string/always_visible_toggles" />
+
+	<CheckBoxPreference
+		android:key="alternate_button_layout"
+		android:title="@string/alternate_button_layout_title"
+		android:summary="@string/alternate_button_layout_summary" />
+
+	<Preference
+		android:key="reset_toggles"
+		android:title="@string/default_title">
+	</Preference>
+
+</PreferenceScreen>

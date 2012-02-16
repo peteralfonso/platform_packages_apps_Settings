@@ -57,6 +57,16 @@
                 android:targetClass="com.android.settings.SetFullBackupPassword" />
     </PreferenceScreen>
 
+    <PreferenceCategory android:title="@string/performance_settings_title" >
+    </PreferenceCategory>
+
+    <PreferenceScreen	
+        android:key="processor"
+        android:fragment="com.android.settings.bb.fragments.Processor"
+        android:title="@string/processor_title"
+        android:summary="@string/processor_summary" />
+
+
     <PreferenceCategory android:key="debug_ui_category"
             android:title="@string/debug_ui_category">
 
