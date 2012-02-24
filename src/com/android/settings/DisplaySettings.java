@@ -52,12 +52,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_ACCELEROMETER = "accelerometer";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
+    private static final String KEY_BATTERY_PULSE = "battery_pulse";
 
     private CheckBoxPreference mBrightnessAutoDim;
     private CheckBoxPreference mAccelerometer;
     private ListPreference mFontSizePref;
     private CheckBoxPreference mAutoHideStatusBar;
     private CheckBoxPreference mNotificationPulse;
+    private CheckBoxPreference mBatteryPulse;
 
     private final Configuration mCurConfig = new Configuration();
     
@@ -120,6 +122,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 mNotificationPulse.setOnPreferenceChangeListener(this);
             } catch (SettingNotFoundException snfe) {
                 Log.e(TAG, Settings.System.NOTIFICATION_LIGHT_PULSE + " not found");
+            }
+        }
+
+        mBatteryPulse = (CheckBoxPreference) findPreference(KEY_BATTERY_PULSE);
+        if (mBatteryPulse != null) {
+            if (getResources().getBoolean(
+                    com.android.internal.R.bool.config_intrusiveBatteryLed) == false) {
+                getPreferenceScreen().removePreference(mBatteryPulse);
+            } else {
+                mBatteryPulse.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.BATTERY_LIGHT_PULSE, 1) == 1);
+                mBatteryPulse.setOnPreferenceChangeListener(this);
             }
         }
     }
@@ -267,6 +281,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else if (preference == mNotificationPulse) {
             boolean value = mNotificationPulse.isChecked();
             Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_LIGHT_PULSE,
+                    value ? 1 : 0);
+            return true;
+        } else if (preference == mBatteryPulse) {
+            boolean value = mBatteryPulse.isChecked();
+            Settings.System.putInt(getContentResolver(), Settings.System.BATTERY_LIGHT_PULSE,
                     value ? 1 : 0);
             return true;
         } else if (preference == mBrightnessAutoDim) {

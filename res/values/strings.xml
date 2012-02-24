@@ -1650,6 +1650,8 @@
     <string name="summary_font_size" translatable="false">%1$s</string>
     <!-- [CHAR LIMIT=40] Display settings screen, title of dialog for picking font size -->
     <string name="dialog_title_font_size">Font size</string>
+    <!-- Display settings screen, battery light repeat pulsing title -->
+    <string name="battery_pulse_title">Pulse low battery light</string>
     <!-- Display settings screen, auto-hide statusbar check box label -->
     <string name="statusbar_auto_hide_title">Auto-hide status bar</string>
     <!-- Display settings screen, auto-hide statusbar check box summary -->
