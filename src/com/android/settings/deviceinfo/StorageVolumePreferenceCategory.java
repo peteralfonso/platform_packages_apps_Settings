@@ -196,29 +196,13 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
         }
 
         mMountTogglePreference = new Preference(getContext());
-		
-		// USB
-		if(mStorageVolume.getPath().equals(R.string.usb_mount_location)) {
-			mMountTogglePreference.setTitle(R.string.usb_eject);
-			mMountTogglePreference.setSummary(R.string.usb_eject_summary);        
-		}
-		else {
-			mMountTogglePreference.setTitle(R.string.sd_eject);
-			mMountTogglePreference.setSummary(R.string.sd_eject_summary);
-		}
-		
+        mMountTogglePreference.setTitle(R.string.sd_eject);
+        mMountTogglePreference.setSummary(R.string.sd_eject_summary);
+
         if (mAllowFormat) {
             mFormatPreference = new Preference(getContext());
-            
-            // USB
-			if(mStorageVolume.getPath().equals(R.string.usb_mount_location)) {  
-				mFormatPreference.setTitle(R.string.usb_format);
-				mFormatPreference.setSummary(R.string.usb_format_summary);				
-			}
-			else {          
-				mFormatPreference.setTitle(R.string.sd_format);
-				mFormatPreference.setSummary(R.string.sd_format_summary);
-			}
+            mFormatPreference.setTitle(R.string.sd_format);
+            mFormatPreference.setSummary(R.string.sd_format_summary);
         }
     }
 
@@ -276,48 +260,23 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
             // There is no reason for the user to unmount it.
             removePreference(mMountTogglePreference);
         }
-		
+
         if (Environment.MEDIA_MOUNTED.equals(state)) {
             mPreferences[AVAILABLE].setSummary(mPreferences[AVAILABLE].getSummary() + readOnly);
-			
-			// USB
-			if(mStorageVolume.getPath().equals(mResources.getString(R.string.usb_mount_location))) {
-				mMountTogglePreference.setEnabled(true);
-				mMountTogglePreference.setTitle(mResources.getString(R.string.usb_eject));
-				mMountTogglePreference.setSummary(mResources.getString(R.string.usb_eject_summary));				
-			}
-			else {
-				mMountTogglePreference.setEnabled(true);
-				mMountTogglePreference.setTitle(mResources.getString(R.string.sd_eject));
-				mMountTogglePreference.setSummary(mResources.getString(R.string.sd_eject_summary));
-			}
+
+            mMountTogglePreference.setEnabled(true);
+            mMountTogglePreference.setTitle(mResources.getString(R.string.sd_eject));
+            mMountTogglePreference.setSummary(mResources.getString(R.string.sd_eject_summary));
         } else {
             if (Environment.MEDIA_UNMOUNTED.equals(state) || Environment.MEDIA_NOFS.equals(state)
                     || Environment.MEDIA_UNMOUNTABLE.equals(state)) {
-				
-				// USB
-				if(mStorageVolume.getPath().equals(mResources.getString(R.string.usb_mount_location))) {
-					mMountTogglePreference.setEnabled(true);
-					mMountTogglePreference.setTitle(mResources.getString(R.string.usb_mount));
-					mMountTogglePreference.setSummary(mResources.getString(R.string.usb_insert_summary));					
-				}
-				else {
-					mMountTogglePreference.setEnabled(true);
-					mMountTogglePreference.setTitle(mResources.getString(R.string.sd_mount));
-					mMountTogglePreference.setSummary(mResources.getString(R.string.sd_mount_summary));					
-				}
+                mMountTogglePreference.setEnabled(true);
+                mMountTogglePreference.setTitle(mResources.getString(R.string.sd_mount));
+                mMountTogglePreference.setSummary(mResources.getString(R.string.sd_mount_summary));
             } else {
-				// USB
-				if(mStorageVolume.getPath().equals(mResources.getString(R.string.usb_mount_location))) {
-					mMountTogglePreference.setEnabled(false);
-					mMountTogglePreference.setTitle(mResources.getString(R.string.usb_mount));
-					mMountTogglePreference.setSummary(mResources.getString(R.string.usb_insert_summary));
-				}
-				else {
-					mMountTogglePreference.setEnabled(false);
-					mMountTogglePreference.setTitle(mResources.getString(R.string.sd_mount));
-					mMountTogglePreference.setSummary(mResources.getString(R.string.sd_insert_summary));
-				}
+                mMountTogglePreference.setEnabled(false);
+                mMountTogglePreference.setTitle(mResources.getString(R.string.sd_mount));
+                mMountTogglePreference.setSummary(mResources.getString(R.string.sd_insert_summary));
             }
 
             removePreference(mUsageBarPreference);
