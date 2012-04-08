@@ -1578,6 +1578,38 @@
     <string name="confirm_new_backup_pw_prompt" msgid="3238728882512787864">"Подтвердите пароль"</string>
     <string name="backup_pw_set_button_text" msgid="2387480910044648795">"Сохранить пароль"</string>
     <string name="backup_pw_cancel_button_text" msgid="8845630125391744615">"Отмена"</string>
+    
+            <!-- Status bar toggles settings -->
+    <string name="toggles_layout">Переключатели в стоке статуса</string>
+    <string name="alternate_button_layout_title">Стиль переключателей</string>
+    <string name="alternate_button_layout_summary">Использовать кнопки</string>
+    <string name="enabled_toggles_title">Включить переключатели</string>
+    <string name="enabled_toggles_summary">Какие переключатели показывать</string>
+    <string name="toggles_order_title">Порядок</string>
+    <string name="toggles_order_summary">В каком порядке показывать переключатели</string>
+    <string name="brightness_location_title">Размещение подсветки</string>
+    <string name="always_visible_toggles">Автоматически скрывать</string>
+    <string name="default_title">Сбросить настройки</string>
+
+    <!-- Performance Settings -->
+    <string name="performance_settings_title">Быстродействие</string>
+    <string name="processor_title">Процессор</string>
+    <string name="processor_summary">Изменить управления и частоту процессора</string>
+    <string name="cpu_cur_freq_title">Поточна частота</string>
+    <string name="cpu_governors_title">CPU governor</string>
+    <string name="cpu_governors_summary">%S</string>
+    <string name="cpu_min_freq_title">Максимальная частота</string>
+    <string name="cpu_min_freq_summary">%s</string>
+    <string name="cpu_max_freq_title">Минимальная частота</string>
+    <string name="cpu_max_freq_summary">%s</string>
+    <string name="cpu_set_on_boot">Установить при запуске</string>
+    <string name="cpu_set_on_boot_summary">Восстанавливать настройки процессора при запуске</string>
+
+<!-- Display settings screen, auto-dim backlight check box label -->
+    <string name="brightness_auto_dim_title">Уменьшать яркость</string>
+    
+    <string name="interface_category">Интерфейс</string>
+    
     <!-- String.format failed for translation -->
     <!-- no translation found for percentage (5866131581207788624) -->
     <skip />
