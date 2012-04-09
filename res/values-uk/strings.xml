@@ -1580,4 +1580,35 @@
     <string name="backup_pw_cancel_button_text" msgid="8845630125391744615">"Скасувати"</string>
     <string name="percentage" msgid="5866131581207788624">"<xliff:g id="NUMBER">%d</xliff:g>%%"</string>
     <string name="additional_system_update_settings_list_item_title" msgid="214987609894661992">"Додаткові оновлення системи"</string>
+        <!-- Status bar toggles settings -->
+    <string name="toggles_layout">Перемикачі в стоці статуса</string>
+    <string name="alternate_button_layout_title">Стиль перемикачів</string>
+    <string name="alternate_button_layout_summary">Використовувати кнопки</string>
+    <string name="enabled_toggles_title">Увімкнути перемикачі</string>
+    <string name="enabled_toggles_summary">Які перемикачі показувати</string>
+    <string name="toggles_order_title">Порядок</string>
+    <string name="toggles_order_summary">В якому порядку показувати меремикачі</string>
+    <string name="brightness_location_title">Розміщення підсвітки</string>
+    <string name="always_visible_toggles">Автоматично хавати</string>
+    <string name="default_title">Скинути налаштування</string>
+
+    <!-- Performance Settings -->
+    <string name="performance_settings_title">Швидкодія</string>
+    <string name="processor_title">Процесор</string>
+    <string name="processor_summary">Змінити управління та частоту процесора</string>
+    <string name="cpu_cur_freq_title">Поточна частота</string>
+    <string name="cpu_governors_title">CPU governor</string>
+    <string name="cpu_governors_summary">%S</string>
+    <string name="cpu_min_freq_title">Максимальна частота</string>
+    <string name="cpu_min_freq_summary">%s</string>
+    <string name="cpu_max_freq_title">Мінімальна частота</string>
+    <string name="cpu_max_freq_summary">%s</string>
+    <string name="cpu_set_on_boot">Встановити при запуску</string>
+    <string name="cpu_set_on_boot_summary">Відновлювати налаштування процесора при запуску</string>
+
+<!-- Display settings screen, auto-dim backlight check box label -->
+    <string name="brightness_auto_dim_title">Зменшувати яскравість</string>
+    
+    <string name="interface_category">Інтерфейс</string>
+     
 </resources>
