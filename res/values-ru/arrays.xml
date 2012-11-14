@@ -50,14 +50,14 @@
   </string-array>
   <string-array name="lock_after_timeout_entries">
     <item msgid="8929270399652145290">"Сразу"</item>
-    <item msgid="6736512735606834431">"5 сек"</item>
-    <item msgid="8044619388267891375">"15 сек"</item>
-    <item msgid="1822002388249545488">"30 сек"</item>
-    <item msgid="8538071621211916519">"1 мин"</item>
-    <item msgid="5663439580228932882">"2 мин"</item>
-    <item msgid="49888496216106852">"5 минут"</item>
-    <item msgid="9002737361305019353">"10 мин"</item>
-    <item msgid="4322676235684793329">"30 мин"</item>
+    <item msgid="6736512735606834431">"Через 5 сек."</item>
+    <item msgid="8044619388267891375">"Через 15 сек."</item>
+    <item msgid="1822002388249545488">"Через 30 сек."</item>
+    <item msgid="8538071621211916519">"Через 1 мин."</item>
+    <item msgid="5663439580228932882">"Через 2 мин."</item>
+    <item msgid="49888496216106852">"Через 5 мин."</item>
+    <item msgid="9002737361305019353">"Через 10 мин."</item>
+    <item msgid="4322676235684793329">"Через 30 мин."</item>
   </string-array>
   <string-array name="entries_font_size">
     <item msgid="8166647333858618801">"Мелкий"</item>
@@ -145,14 +145,14 @@
     <item msgid="5702329417707689835">"Отличный"</item>
   </string-array>
   <string-array name="wifi_sleep_policy_entries">
-    <item msgid="3269131034472904310">"Всегда"</item>
+    <item msgid="3269131034472904310">"Не выключать"</item>
     <item msgid="844721238536786870">"Только при питании от сети"</item>
-    <item msgid="2990218920631468642">"Никогда (увеличивает расход трафика)"</item>
+    <item msgid="2990218920631468642">"Всегда выключать (моб. трафик больше)"</item>
   </string-array>
   <string-array name="wifi_sleep_policy_entries_wifi_only">
-    <item msgid="2124319326282651391">"Всегда"</item>
+    <item msgid="2124319326282651391">"Не выключать"</item>
     <item msgid="7433294150916905997">"Только при питании от сети"</item>
-    <item msgid="1390404486722375028">"Никогда"</item>
+    <item msgid="1390404486722375028">"Всегда выключать"</item>
   </string-array>
   <string-array name="wifi_frequency_band_entries">
     <item msgid="624340809384223320">"Авто"</item>
@@ -253,6 +253,19 @@
     <item msgid="3170120558236848008">"Скорость 5x"</item>
     <item msgid="1069584980746680398">"Скорость 10x"</item>
   </string-array>
+  <string-array name="overlay_display_devices_entries">
+    <item msgid="1606809880904982133">"Нет данных"</item>
+    <item msgid="688482401508173818">"720 x 480 пикс. (mdpi)"</item>
+    <item msgid="1725473474827398815">"1280 x 720 пикс. (tvdpi)"</item>
+    <item msgid="6813511923592083251">"1920 x 1080 пикс. (xhdpi)"</item>
+    <item msgid="3646519549495410112">"1280x720 (tvdpi)/1920x1080 (xhdpi)"</item>
+  </string-array>
+  <string-array name="enable_opengl_traces_entries">
+    <item msgid="3191973083884253830">"Нет данных"</item>
+    <item msgid="9089630089455370183">"Logcat"</item>
+    <item msgid="5397807424362304288">"Systrace (графика)"</item>
+    <item msgid="1340692776955662664">"Список вызовов в glGetError"</item>
+  </string-array>
   <string-array name="app_process_limit_entries">
     <item msgid="3401625457385943795">"Стандартное ограничение"</item>
     <item msgid="4071574792028999443">"Без фоновых процессов"</item>
@@ -276,5 +289,10 @@
     <item msgid="4039737283841672166">"Подключена"</item>
     <item msgid="4042143101664725090">"Время ожидания истекло"</item>
     <item msgid="7664124146786465092">"Сбой"</item>
+  </string-array>
+  <string-array name="security_settings_premium_sms_values">
+    <item msgid="7389829271787670252">"Спрашивать"</item>
+    <item msgid="5077768429488260031">"Не разрешать"</item>
+    <item msgid="1417929597727989746">"Разрешать всегда"</item>
   </string-array>
 </resources>

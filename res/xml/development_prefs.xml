@@ -16,6 +16,11 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/development_settings_title">
+    <com.android.settings.BugreportPreference
+            android:key="bugreport"
+            android:title="@*android:string/bugreport_title"
+            android:dialogTitle="@*android:string/bugreport_title" />
+
     <PreferenceScreen
             android:key="local_backup_password"
             android:title="@string/local_backup_password_title"
@@ -53,6 +58,11 @@
             android:summary="@string/enable_adb_summary"/>
 
         <CheckBoxPreference
+            android:key="bugreport_in_power"
+            android:title="@string/bugreport_in_power"
+            android:summary="@string/bugreport_in_power_summary"/>
+
+        <CheckBoxPreference
             android:key="allow_mock_location"
             android:title="@string/allow_mock_location"
             android:summary="@string/allow_mock_location_summary"/>
@@ -64,6 +74,11 @@
             android:key="wait_for_debugger"
             android:title="@string/wait_for_debugger"
             android:summary="@string/wait_for_debugger_summary"/>
+
+        <CheckBoxPreference
+            android:key="verify_apps_over_usb"
+            android:title="@string/verify_apps_over_usb_title"
+            android:summary="@string/verify_apps_over_usb_summary"/>
 
     </PreferenceCategory>
 
@@ -94,6 +109,16 @@
             android:key="show_hw_screen_udpates"
             android:title="@string/show_hw_screen_updates"
             android:summary="@string/show_hw_screen_updates_summary"/>
+
+        <CheckBoxPreference
+            android:key="show_hw_layers_udpates"
+            android:title="@string/show_hw_layers_updates"
+            android:summary="@string/show_hw_layers_updates_summary"/>
+
+        <CheckBoxPreference
+            android:key="show_hw_overdraw"
+            android:title="@string/show_hw_overdraw"
+            android:summary="@string/show_hw_overdraw_summary"/>
 
         <CheckBoxPreference
             android:key="show_screen_updates"
@@ -131,6 +156,18 @@
             android:title="@string/force_hw_ui"
             android:summary="@string/force_hw_ui_summary"/>
 
+        <CheckBoxPreference
+            android:key="force_msaa"
+            android:title="@string/force_msaa"
+            android:summary="@string/force_msaa_summary"/>
+
+        <ListPreference
+            android:key="overlay_display_devices"
+            android:title="@string/overlay_display_devices_title"
+            android:persistent="false"
+            android:entries="@array/overlay_display_devices_entries"
+            android:entryValues="@array/overlay_display_devices_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:key="debug_monitoring_category"
@@ -150,6 +187,13 @@
             android:key="track_frame_time"
             android:title="@string/track_frame_time"
             android:summary="@string/track_frame_time_summary"/>
+
+        <ListPreference
+            android:key="enable_opengl_traces"
+            android:title="@string/enable_opengl_traces_title"
+            android:persistent="false"
+            android:entries="@array/enable_opengl_traces_entries"
+            android:entryValues="@array/enable_opengl_traces_values" />
 
         <MultiCheckPreference
             android:key="enable_traces"
@@ -178,6 +222,6 @@
             android:title="@string/show_all_anrs"
             android:summary="@string/show_all_anrs_summary"/>
 
-    </PreferenceCategory>
+     </PreferenceCategory>
 
 </PreferenceScreen>

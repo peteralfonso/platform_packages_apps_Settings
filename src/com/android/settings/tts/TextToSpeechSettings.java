@@ -149,14 +149,6 @@ public class TextToSpeechSettings extends SettingsPreferenceFragment implements
         }
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        if ((mDefaultRatePref != null) && (mDefaultRatePref.getDialog() != null)) {
-            mDefaultRatePref.getDialog().dismiss();
-        }
-    }
-
     private void initSettings() {
         final ContentResolver resolver = getContentResolver();
 
@@ -288,6 +280,7 @@ public class TextToSpeechSettings extends SettingsPreferenceFragment implements
         }
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (KEY_DEFAULT_RATE.equals(preference.getKey())) {
             // Default rate
@@ -309,6 +302,7 @@ public class TextToSpeechSettings extends SettingsPreferenceFragment implements
     /**
      * Called when mPlayExample is clicked
      */
+    @Override
     public boolean onPreferenceClick(Preference preference) {
         if (preference == mPlayExample) {
             // Get the sample text from the TTS engine; onActivityResult will do
@@ -329,12 +323,13 @@ public class TextToSpeechSettings extends SettingsPreferenceFragment implements
         Log.i(TAG, "Displaying data alert for :" + key);
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(android.R.string.dialog_alert_title);
-        builder.setIcon(android.R.drawable.ic_dialog_alert);
+        builder.setIconAttribute(android.R.attr.alertDialogIcon);
         builder.setMessage(getActivity().getString(
                 R.string.tts_engine_security_warning, mEnginesHelper.getEngineInfo(key).label));
         builder.setCancelable(true);
         builder.setPositiveButton(android.R.string.ok,
                 new DialogInterface.OnClickListener() {
+                    @Override
                     public void onClick(DialogInterface dialog, int which) {
                        updateDefaultEngine(key);
                     }

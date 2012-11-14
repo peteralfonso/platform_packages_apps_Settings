@@ -25,6 +25,7 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.RemoteException;
+import android.os.UserHandle;
 import android.security.Credentials;
 import android.security.KeyChain.KeyChainConnection;
 import android.security.KeyChain;
@@ -104,8 +105,15 @@ public final class CredentialStorage extends Activity {
      */
     private int mRetriesRemaining = -1;
 
-    @Override protected void onResume() {
+    @Override
+    protected void onResume() {
         super.onResume();
+
+        if (UserHandle.myUserId() != UserHandle.USER_OWNER) {
+            Log.i(TAG, "Cannot install to CredentialStorage as non-primary user");
+            finish();
+            return;
+        }
 
         Intent intent = getIntent();
         String action = intent.getAction();
@@ -113,8 +121,8 @@ public final class CredentialStorage extends Activity {
         if (ACTION_RESET.equals(action)) {
             new ResetDialog();
         } else {
-            if (ACTION_INSTALL.equals(action) &&
-                    "com.android.certinstaller".equals(getCallingPackage())) {
+            if (ACTION_INSTALL.equals(action)
+                    && "com.android.certinstaller".equals(getCallingPackage())) {
                 mInstallBundle = intent.getExtras();
             }
             // ACTION_UNLOCK also handled here in addition to ACTION_INSTALL
@@ -235,7 +243,7 @@ public final class CredentialStorage extends Activity {
         private ResetDialog() {
             AlertDialog dialog = new AlertDialog.Builder(CredentialStorage.this)
                     .setTitle(android.R.string.dialog_alert_title)
-                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setIconAttribute(android.R.attr.alertDialogIcon)
                     .setMessage(R.string.credentials_reset_hint)
                     .setPositiveButton(android.R.string.ok, this)
                     .setNegativeButton(android.R.string.cancel, this)
@@ -305,7 +313,7 @@ public final class CredentialStorage extends Activity {
         private ConfigureKeyGuardDialog() {
             AlertDialog dialog = new AlertDialog.Builder(CredentialStorage.this)
                     .setTitle(android.R.string.dialog_alert_title)
-                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setIconAttribute(android.R.attr.alertDialogIcon)
                     .setMessage(R.string.credentials_configure_lock_screen_hint)
                     .setPositiveButton(android.R.string.ok, this)
                     .setNegativeButton(android.R.string.cancel, this)

@@ -34,10 +34,12 @@
                       style="@style/wifi_item" >
                 <TextView
                         style="@style/wifi_item_label"
-                        android:text="@string/wifi_ssid" />
+                        android:text="@string/wifi_ssid"
+                        android:textDirection="locale" />
 
                 <EditText android:id="@+id/ssid"
                         style="@style/wifi_item_content"
+                        android:maxLength="32"
                         android:singleLine="true"
                         android:inputType="textNoSuggestions" />
              </LinearLayout>
